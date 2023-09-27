@@ -2,6 +2,7 @@
 import React, { Suspense } from 'react'
 import TicketList from './TicketList'
 import Loading from '../loading'
+import Link from 'next/link'
 
 
 export default function Tickets() {
@@ -13,6 +14,11 @@ export default function Tickets() {
           <p><small>Currently open tickets</small></p>
         </div>
       </nav>
+      <Link href="/tickets/create">
+      <button className='btn-primary'>
+        Add New Ticket
+      </button>
+      </Link>
       <Suspense fallback={<Loading/>}>
         <TicketList />
       </Suspense>
